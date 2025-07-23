@@ -3,7 +3,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 NAME = megaphone
 
-SOURCES = test.cpp
+SOURCES = megaphone.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
