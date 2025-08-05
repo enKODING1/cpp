@@ -71,7 +71,7 @@ void Contact::setDarkestSecret(std::string darkestSecret)
     this->darkestSecret = darkestSecret;
 }
 
-void Contact::printContact() const
+void Contact::printContact(int nb) const
 {
-    std::cout << "|" << std::setw(10) << printWidth(this->firstName, 10) << "|" << std::setw(10) << printWidth(this->lastName, 10) << "|" << std::setw(10) << printWidth(this->nickname, 10) << "|" << std::endl;
+    std::cout << "|" << std::setw(10) << nb << "|" << std::setw(10) << printWidth(this->firstName, 10) << "|" << std::setw(10) << printWidth(this->lastName, 10) << "|" << std::setw(10) << printWidth(this->nickname, 10) << "|" << std::endl;
 }

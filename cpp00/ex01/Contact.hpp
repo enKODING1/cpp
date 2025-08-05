@@ -24,6 +24,6 @@ class Contact
       void setNickname(std::string nickname);
       void setPhoneNumber(std::string phoneNumber);
       void setDarkestSecret(std::string darkestSecret);
-      void printContact() const;
+      void printContact(int nb) const;
 };
 #endif
