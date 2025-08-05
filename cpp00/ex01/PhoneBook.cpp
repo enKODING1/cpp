@@ -17,7 +17,8 @@ void PhoneBook::addContact(Contact contact)
     {
       contacts[index] = contact;
       index++;
-      nbContacts++;
+      if (nbContacts < 8)
+        nbContacts++;
     }
     else
     {
