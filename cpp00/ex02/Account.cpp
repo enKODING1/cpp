@@ -1,5 +1,6 @@
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 Account::Account(int initial_deposit)
 {
@@ -92,5 +93,9 @@ void Account::displayStatus() const
 
 void Account::_displayTimestamp()
 {
-    std::cout << "[19920104_091532]";
+    std::time_t now = std::time(NULL);
+    std::tm *time_info = std::localtime(&now);
+    char buffer[32];
+    std::strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", time_info);
+    std::cout <<"[" << buffer << "]";
 };
