@@ -39,7 +39,7 @@ void FileReplacer::_replaceAndWrite(std::string line)
 
     while((pos = line.find(_s1, pos)) != std::string::npos)
     {
-        line.replace(pos, _s1.length(), _s2);
+        _replace(line, pos, _s1.length(), _s2);
         pos += _s2.length();
     }
 
@@ -66,4 +66,10 @@ bool FileReplacer::_execute()
     _replaceAllAndWrite();
     _closeAllStream();
     return true;
+}
+
+void FileReplacer::_replace(std::string &str, std::size_t pos, std::size_t n, std::string &s)
+{
+    str.erase(pos, n);
+    str.insert(pos, s);
 }
