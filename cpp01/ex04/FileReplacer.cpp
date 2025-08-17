@@ -13,11 +13,9 @@ FileReplacer::~FileReplacer()
 FileReplacer::FileReplacer(const std::string &file, const std::string &s1, const std::string &s2)
     : _file(file), 
       _s1(s1), 
-      _s2(s2),
-      _inputFile(file.c_str()),
-      _outFile((file + ".replace").c_str())
+      _s2(s2)
 {
-    _execute();
+    
 }
 
 bool FileReplacer::_isOpenStream()
@@ -55,16 +53,26 @@ void FileReplacer::_replaceAllAndWrite()
         _replaceAndWrite(line);
 }
 
-bool FileReplacer::_execute()
+bool FileReplacer::run()
 {
-    if (!_isOpenStream())
+    _inputFile.open(_file.c_str());
+    if (!_inputFile.is_open())
     {
-        std::cout << "can't open file!" << std::endl;
+        std::cerr << "Error: Input file cannot be opened." << std::endl;
         return false;
     }
 
+    _outFile.open((_file + ".replace").c_str());
+    if (!_outFile.is_open())
+    {
+        std::cerr << "Error: Output file cannot be created." << std::endl;
+        _inputFile.close();
+        return false;
+    }
+ 
     _replaceAllAndWrite();
     _closeAllStream();
+    
     return true;
 }
 

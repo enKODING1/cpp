@@ -16,5 +16,6 @@ int main(int argc, char **argv)
     std::string s2 = argv[3];
     
     FileReplacer replacer(file, s1, s2);
+    replacer.run();
     return 0;
 }
