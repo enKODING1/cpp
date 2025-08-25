@@ -7,6 +7,7 @@ int main(void)
     ScavTrap attackBot("attackBot");
     ScavTrap damageBot("damageBot");
     ScavTrap repairBot("repairBot");
+    ClapTrap *bot = new ScavTrap("test");
 
     /* attack test */
     std::cout << std::endl
@@ -30,8 +31,10 @@ int main(void)
     std::cout << std::endl
               << "---------guarding gate test---------" << std::endl;
     attackBot.guardGate();
-    attackBot.guardGate();
-    attackBot.guardGate();
+
+    std::cout << std::endl
+              << "---------overriding gate test---------" << std::endl;
+    bot->attack("wowowo");
     std::cout << std::endl;
     return 0;
 }
