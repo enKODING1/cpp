@@ -36,5 +36,7 @@ int main(void)
               << "---------overriding gate test---------" << std::endl;
     bot->attack("wowowo");
     std::cout << std::endl;
+
+    delete bot;
     return 0;
 }
