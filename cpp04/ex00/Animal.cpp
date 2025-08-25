@@ -16,6 +16,7 @@ Animal::Animal(const std::string type) : _type(type)
 Animal::Animal(const Animal &other) : _type("Animal")
 {
     std::cout << "Animal copy constructor called" << std::endl;
+    *this = other;
 }
 
 Animal &Animal::operator=(const Animal &other)
@@ -34,9 +35,19 @@ Animal::~Animal()
     std::cout << "Animal deconstructor for " << _type << " called" << std::endl;
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
     std::cout << "not set.." << std::endl;
+}
+
+std::string Animal::getType() const
+{
+    return _type;
+}
+
+void Animal::setType(const std::string type)
+{
+    _type = type;
 }
 
 /*
@@ -74,9 +85,19 @@ Dog::~Dog()
     std::cout << "Dog deconstructor for " << _type << " called" << std::endl;
 }
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
     std::cout << "wal!! wal!!" << std::endl;
+}
+
+std::string Dog::getType() const
+{
+    return _type;
+}
+
+void Dog::setType(const std::string type)
+{
+    _type = type;
 }
 
 /*
@@ -115,7 +136,17 @@ Cat::~Cat()
     std::cout << "Cat deconstructor for " << _type << " called" << std::endl;
 }
 
-void Cat::makeSound()
+void Cat::makeSound() const
 {
     std::cout << "meow!! meow!!" << std::endl;
+}
+
+std::string Cat::getType() const
+{
+    return _type;
+}
+
+void Cat::setType(const std::string type)
+{
+    _type = type;
 }

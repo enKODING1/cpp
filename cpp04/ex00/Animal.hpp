@@ -14,9 +14,11 @@ public:
     Animal(const std::string type);
     Animal(const Animal &other);
     Animal &operator=(const Animal &other);
-    ~Animal();
+    virtual ~Animal();
 
-    virtual void makeSound();
+    virtual void makeSound() const;
+    virtual std::string getType() const;
+    virtual void setType(const std::string type);
 };
 
 class Dog : public Animal
@@ -29,7 +31,9 @@ public:
     Dog &operator=(const Dog &other);
     ~Dog();
 
-    void makeSound();
+    void makeSound() const;
+    std::string getType() const;
+    void setType(const std::string type);
 };
 
 class Cat : public Animal
@@ -42,6 +46,8 @@ public:
     Cat &operator=(const Cat &other);
     ~Cat();
 
-    void makeSound();
+    void makeSound() const;
+    std::string getType() const;
+    void setType(const std::string type);
 };
 #endif
