@@ -11,5 +11,6 @@ int main(void)
     std::cout << "------" << std::endl;
     dia.attack("bot");
     std::cout << "------" << std::endl;
+    dia.takeDamage(10);
     return 0;
 }

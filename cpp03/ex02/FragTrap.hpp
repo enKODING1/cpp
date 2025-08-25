@@ -8,6 +8,7 @@
 class FragTrap : public ClapTrap
 {
 private:
+    
 public:
     FragTrap();
     FragTrap(const std::string name);

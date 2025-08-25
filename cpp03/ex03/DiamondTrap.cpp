@@ -5,6 +5,11 @@
 
 DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
 {
+    _name = "diaAnonymous";
+    _hitPoints = FragTrap::_hitPoints;
+    _energyPoints = ScavTrap::_energyPoints;
+    _attackDamage = FragTrap::_attackDamage;
+
     std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
@@ -24,7 +29,10 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
     std::cout << "DiamondTrap assignment constructor called" << std::endl;
     if (this != &other)
     {
-        this->_name = other._name;
+        _name = other._name;
+        _hitPoints = other._hitPoints;
+        _energyPoints = other._energyPoints;
+        _attackDamage = other._attackDamage;
     }
 
     return *this;
