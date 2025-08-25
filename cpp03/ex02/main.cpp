@@ -7,13 +7,6 @@ int main(void)
     FragTrap attackBot("attackBot");
     FragTrap damageBot("damageBot");
     FragTrap repairBot("repairBot");
-    ClapTrap *test = new FragTrap("test");
-
-    /* attack test */
-    std::cout << std::endl
-              << "---------attack test---------" << std::endl;
-    for (int i = 0; i < 11; ++i)
-        attackBot.attack("pikachu");
 
     /* damage test */
     std::cout << std::endl
@@ -30,12 +23,7 @@ int main(void)
 
     std::cout << std::endl
               << "---------highfive test---------" << std::endl;
-    attackBot.highFivesGuys();
-    damageBot.highFivesGuys();
     repairBot.highFivesGuys();
-    std::cout << std::endl
-              << "---------highfive test---------" << std::endl;
-    test->attack("test");
     std::cout << std::endl;
     return 0;
 }

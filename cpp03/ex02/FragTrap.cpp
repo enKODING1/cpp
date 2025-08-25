@@ -42,23 +42,6 @@ FragTrap::~FragTrap()
     std::cout << "FragTrap deconstructor for " << _name << " called" << std::endl;
 }
 
-void FragTrap::attack(const std::string &target)
-{
-    if (_hitPoints > 0 && _energyPoints > 0)
-    {
-        std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
-        _energyPoints--;
-    }
-    else if (_hitPoints <= 0)
-    {
-        std::cout << "FragTrap " << _name << " can't attack, current HP: " << _hitPoints << std::endl;
-    }
-    else if (_energyPoints <= 0)
-    {
-        std::cout << "FragTrap " << _name << " can't attack, current EnergePoints: " << _energyPoints << std::endl;
-    }
-}
-
 void FragTrap::highFivesGuys(void)
 {
     std::cout << "FragTrap " << _name << " requests a high five!" << std::endl;
