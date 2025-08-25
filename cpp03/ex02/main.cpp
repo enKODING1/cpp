@@ -7,6 +7,7 @@ int main(void)
     FragTrap attackBot("attackBot");
     FragTrap damageBot("damageBot");
     FragTrap repairBot("repairBot");
+    ClapTrap *test = new FragTrap("test");
 
     /* attack test */
     std::cout << std::endl
@@ -32,7 +33,9 @@ int main(void)
     attackBot.highFivesGuys();
     damageBot.highFivesGuys();
     repairBot.highFivesGuys();
-
+    std::cout << std::endl
+              << "---------highfive test---------" << std::endl;
+    test->attack("test");
     std::cout << std::endl;
     return 0;
 }
