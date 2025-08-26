@@ -3,7 +3,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 NAME = ex00
 
-SOURCES = Animal.cpp main.cpp
+SOURCES = Animal.cpp Dog.cpp Cat.cpp main.cpp
 INCLUDES = -I.
 OBJECTS = $(SOURCES:.cpp=.o)
 
