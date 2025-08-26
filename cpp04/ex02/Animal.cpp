@@ -34,18 +34,3 @@ Animal::~Animal()
 {
     std::cout << "Animal deconstructor for " << _type << " called" << std::endl;
 }
-
-void Animal::makeSound() const
-{
-    std::cout << "not set.." << std::endl;
-}
-
-std::string Animal::getType() const
-{
-    return _type;
-}
-
-void Animal::setType(const std::string type)
-{
-    _type = type;
-}
