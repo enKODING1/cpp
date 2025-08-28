@@ -1,6 +1,10 @@
-#ifndef MATERIASOURCE_HPP
-#define MATERIASOURCE_HPP
-#include "AMateria.hpp"
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
+
+#include <string>
+
+// Forward declaration
+class AMateria;
 
 class IMateriaSource
 {
