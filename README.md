@@ -4,7 +4,7 @@
 - [x] cpp01
 - [x] cpp02
 - [x] cpp03
-- [ ] cpp04
+- [x] cpp04
 - [ ] cpp05
 - [ ] cpp06
 - [ ] cpp07
