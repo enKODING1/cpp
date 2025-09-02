@@ -2,7 +2,7 @@
 
 AMateria::AMateria() : _type("Amateria")
 {
-    std::cout << "AMateria type constructor called" << std::endl;
+    // std::cout << "AMateria type constructor called" << std::endl;
 }
 
 AMateria::AMateria(const AMateria &other)
@@ -22,12 +22,12 @@ AMateria &AMateria::operator=(const AMateria &other)
 
 AMateria::AMateria(std::string const &type) : _type(type)
 {
-    std::cout << "Animal constructor for the type " << type << " called" << std::endl;
+    // std::cout << "AMateria constructor for the type " << type << " called" << std::endl;
 }
 
 AMateria::~AMateria()
 {
-    std::cout << "AMateria deconstructor called" << std::endl;
+    // std::cout << "AMateria deconstructor called" << std::endl;
 }
 
 std::string const &AMateria::getType() const

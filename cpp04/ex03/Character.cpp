@@ -6,14 +6,14 @@
  */
 Character::Character() : ICharacter(), _name("character")
 {
-    std::cout << "Character default constructor called" << std::endl;
+    // std::cout << "Character default constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
         _inventory[i] = NULL;
 }
 
 Character::Character(const Character &other) : ICharacter(), _name(other._name)
 {
-    std::cout << "Character copy constructor called" << std::endl;
+    // std::cout << "Character copy constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
     {
         if (other._inventory[i])
@@ -25,7 +25,7 @@ Character::Character(const Character &other) : ICharacter(), _name(other._name)
 
 Character::Character(std::string name) : ICharacter(), _name(name)
 {
-    std::cout << "Character constructor for the name " << name << " called" << std::endl;
+    // std::cout << "Character constructor for the name " << name << " called" << std::endl;
     for (int i = 0; i < 4; i++)
         _inventory[i] = NULL;
 }
@@ -51,7 +51,7 @@ Character &Character::operator=(const Character &other)
 
 Character::~Character()
 {
-    std::cout << "Character deconstructor called" << std::endl;
+    // std::cout << "Character deconstructor called" << std::endl;
     for (int i = 0; i < 4; i++)
         if (_inventory[i])
             delete _inventory[i];

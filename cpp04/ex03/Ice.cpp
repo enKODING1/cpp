@@ -2,12 +2,12 @@
 
 Ice::Ice() : AMateria("ice")
 {
-    std::cout << "Ice default constructor called" << std::endl;
+    // std::cout << "Ice default constructor called" << std::endl;
 }
 
 Ice::Ice(const Ice &other) : AMateria(other)
 {
-    std::cout << "Ice copy constructor called" << std::endl;
+    // std::cout << "Ice copy constructor called" << std::endl;
 }
 
 Ice &Ice::operator=(const Ice &other)
@@ -25,7 +25,7 @@ Ice::~Ice()
 
 AMateria *Ice::clone() const
 {
-    return new Ice(*this);  
+    return new Ice(*this);
 }
 
 void Ice::use(ICharacter &target)

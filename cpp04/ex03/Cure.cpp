@@ -2,12 +2,12 @@
 
 Cure::Cure() : AMateria("cure")
 {
-    std::cout << "Cure default constructor called" << std::endl;
+    // std::cout << "Cure default constructor called" << std::endl;
 }
 
 Cure::Cure(const Cure &other) : AMateria(other)
 {
-    std::cout << "Cure copy constructor called" << std::endl;
+    // std::cout << "Cure copy constructor called" << std::endl;
 }
 
 Cure &Cure::operator=(const Cure &other)
