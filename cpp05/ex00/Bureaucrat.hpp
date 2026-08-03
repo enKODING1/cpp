@@ -13,8 +13,8 @@ class Bureaucrat{
         Bureaucrat &operator=(const Bureaucrat &other);
         ~Bureaucrat();
 
-        std::string getName();
-        int getGrade();
+        std::string getName() const;
+        int getGrade() const;
         void increaseGrade();
         void decreaseGrade();
 
@@ -28,3 +28,5 @@ class Bureaucrat{
                 virtual const char * what() const throw();
         };
 };
+
+std::ostream& operator<<(std::ostream &os, const Bureaucrat &b);

@@ -5,9 +5,8 @@ int main(void)
 {
     try 
     {
-        Bureaucrat b = Bureaucrat("skang", 151);
-        std::cout << b.getName() << std::endl;
-        std::cout << b.getGrade() << std::endl;
+        Bureaucrat b = Bureaucrat("skang", 150);
+        std::cout << b << std::endl; 
     }
     catch (std::exception &e)
     {
