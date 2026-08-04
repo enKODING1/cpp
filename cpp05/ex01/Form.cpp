@@ -1,4 +1,5 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 
 Form::Form() : _name("foobar"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150)
@@ -53,7 +54,7 @@ int Form::getGradeToExecute()
 void Form::beSigned(Bureaucrat &b)
 {
     int bGrade = b.getGrade();
-    if(bGrade >= _gradeToSign) 
+    if(bGrade <= _gradeToSign) 
         _isSigned = true;
     else 
         throw Form::GradeTooLowException();

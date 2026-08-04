@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 
 
@@ -60,6 +61,22 @@ void Bureaucrat::decreaseGrade()
 {
     checkGrade(_grade + 1);
     _grade++;
+}
+
+void Bureaucrat::signForm(Form &f)
+{
+    try
+    {
+        f.beSigned(*this);
+
+        if(f.getIsSigned())
+            std::cout << *this << " signed " << f << std::endl;
+    }
+    catch(std::exception &e)
+    {
+        std::cout << *this << " couldn't signed " << f << " because " << e.what() << std::endl;
+    }
+    
 }
 
 const char * Bureaucrat::GradeTooHighException::what() const throw()

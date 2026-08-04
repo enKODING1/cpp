@@ -1,5 +1,7 @@
 #include <iostream>
 
+class Form;
+
 class Bureaucrat{
     private:
         const std::string _name;
@@ -17,6 +19,7 @@ class Bureaucrat{
         int getGrade() const;
         void increaseGrade();
         void decreaseGrade();
+        void signForm(Form &f);
 
         class GradeTooHighException : public std::exception {
             public:
