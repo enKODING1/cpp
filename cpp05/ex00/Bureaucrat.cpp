@@ -8,10 +8,9 @@ Bureaucrat::Bureaucrat() : _name("foobar"), _grade(150)
     std::cout << "Bureaucrat default constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other)
+Bureaucrat::Bureaucrat(const Bureaucrat &other): _name(other._name), _grade(other._grade)
 {
     checkGrade(_grade);
-    *this = other;
     std::cout << "Bureaucrat copy constructor called" << std::endl;
 }
 
