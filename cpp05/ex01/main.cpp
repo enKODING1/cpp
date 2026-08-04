@@ -1,16 +1,9 @@
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iostream>
 
 int main(void)
 {
-    try 
-    {
-        Bureaucrat b = Bureaucrat("skang", 150);
-        std::cout << b << std::endl; 
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+    Form f = Form();
+    std::cout << f << std::endl;
     return 0;
 }

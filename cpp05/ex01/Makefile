@@ -1,9 +1,9 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = ex00
+NAME = ex01
 
-SOURCES = Bureaucrat.cpp main.cpp
+SOURCES = Bureaucrat.cpp Form.cpp main.cpp
 INCLUDES = -I.
 OBJECTS = $(SOURCES:.cpp=.o)
 
