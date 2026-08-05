@@ -1,3 +1,5 @@
+#include <cstdlib>
+#include <ctime>
 #include "RobotomyRequestForm.hpp"
 #include "../Bureaucrat.hpp"
 
@@ -35,5 +37,12 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
     bool isValid = getIsSigned() && (executor.getGrade() <= getGradeToExecute());
     if (!isValid)
         throw AForm::GradeTooLowException();
+    std::srand(std::time(NULL));
+    int roll = std::rand() % 2;
+
+    if (roll == 1)
+        std::cout << _target << " has been robotomized" << std::endl;
+    if (roll == 0)
+        std::cout << _target << " robotomy failed" << std::endl;
     // sign되어있지 않을 때를 별도 처리하는 예외를 만드는게 나을까
 }
