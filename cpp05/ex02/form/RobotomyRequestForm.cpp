@@ -1,7 +1,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "../Bureaucrat.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("PresidentialPardon", 25, 5), _target("wall-e")
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequest", 72, 45), _target("wall-e")
 {
     std::cout << "RobotomyRequestForm default constructor called" << std::endl;
 }
@@ -25,7 +25,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
     std::cout << "RobotomyRequestForm deconstructor for " << _target << " called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequest", 25, 5), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequest", 72, 45), _target(target)
 {
     std::cout << "RobotomyRequestForm constructor for the name " << _target << " called" << std::endl;
 }
