@@ -35,5 +35,6 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
     bool isValid = getIsSigned() && (executor.getGrade() <= getGradeToExecute());
     if (!isValid)
         throw AForm::GradeTooLowException();
+    std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
     // sign되어있지 않을 때를 별도 처리하는 예외를 만드는게 나을까
 }
