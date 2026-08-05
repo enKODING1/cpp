@@ -1,26 +1,11 @@
-#include "./form/PresidentialPardonForm.hpp"
-#include "./form/RobotomyRequestForm.hpp"
-#include "./form/ShrubberyCreationForm.hpp"
-#include "Bureaucrat.hpp"
-#include <iostream>
+#include "Intern.hpp"
 
 int main(void) {
-  try {
-    Bureaucrat b = Bureaucrat("skang", 0);
-    RobotomyRequestForm r = RobotomyRequestForm("skang1");
-    PresidentialPardonForm p = PresidentialPardonForm("skang2");
-    ShrubberyCreationForm s = ShrubberyCreationForm("skang3");
+  Intern someRandomIntern;
+  AForm *rrf;
+  rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
-    // b.signForm(r);
-    // b.signForm(p);
-    b.signForm(s);
-
-    // r.execute(b);
-    // p.execute(b);
-    b.executeForm(s);
-  } catch (std::exception &e) {
-    std::cout << e.what() << std::endl;
-  }
+  std::cout << *rrf << std::endl;
 
   return 0;
 }
