@@ -1,3 +1,6 @@
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
+
 #include <iostream>
 #include "./interface/AForm.hpp"
 
@@ -17,3 +20,5 @@ public:
 
     virtual void execute(Bureaucrat const &executor) const;
 };
+
+#endif

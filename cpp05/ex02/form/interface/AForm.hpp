@@ -1,3 +1,6 @@
+#ifndef AFORM_HPP
+#define AFORM_HPP
+
 #include <iostream>
 
 class Bureaucrat;
@@ -39,3 +42,5 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &os, AForm &f);
+
+#endif
