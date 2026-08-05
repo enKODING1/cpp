@@ -7,5 +7,6 @@ int main(void) {
 
   std::cout << *rrf << std::endl;
 
+  delete rrf;
   return 0;
 }
