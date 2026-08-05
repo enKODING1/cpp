@@ -41,6 +41,6 @@ public:
     };
 };
 
-std::ostream &operator<<(std::ostream &os, AForm &f);
+std::ostream &operator<<(std::ostream &os, const AForm &f);
 
 #endif
