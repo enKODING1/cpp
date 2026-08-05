@@ -1,3 +1,4 @@
+#include <fstream>
 #include "ShrubberyCreationForm.hpp"
 #include "../Bureaucrat.hpp"
 
@@ -35,5 +36,23 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     bool isValid = getIsSigned() && (executor.getGrade() <= getGradeToExecute());
     if (!isValid)
         throw AForm::GradeTooLowException();
+    std::string ascii_tree =
+        "       &&& &&  & &&\n"
+        "     && &\\/&\\|& ()|/ @, &&\n"
+        "     &\\/(/&/&||/&/&/\\)&/&\\@\n"
+        "   &() &&/&\\/&&&&&/(&&& ()__/\\\n"
+        "  &&, &&&/&(&&& &)&/&&&/&\n"
+        "   &&(&&&&/&&&&/&(&&|(&&/&&&\n"
+        "    &&&&&&/|/&&/&/(/&&&&/&&&\n"
+        "      &&/&& & &&/&/&(&&|/&&&\n"
+        "        &&&&&(&//&/&&&(/&&&\n"
+        "            &&(/&&|\n"
+        "             ||||\n"
+        "             ||||";
+
+    std::string name = _target + "_shrubbery";
+    std::ofstream file(name.c_str());
+    file << ascii_tree << std::endl;
+    file.close();
     // sign되어있지 않을 때를 별도 처리하는 예외를 만드는게 나을까
 }
