@@ -15,10 +15,10 @@ public:
   Intern &operator=(const Intern &other);
   ~Intern();
 
-  AForm *createShrubbery(std::string target);
-  AForm *createRobotomy(std::string target);
-  AForm *createPresidential(std::string target);
-  AForm *makeForm(std::string formName, std::string target);
+  AForm *createShrubbery(const std::string &target) const;
+  AForm *createRobotomy(const std::string &target) const;
+  AForm *createPresidential(const std::string &target) const;
+  AForm *makeForm(const std::string &formName, const std::string &target) const;
 };
 
 #endif

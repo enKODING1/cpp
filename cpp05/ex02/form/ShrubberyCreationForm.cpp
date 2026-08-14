@@ -26,7 +26,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
     std::cout << "ShrubberyCreationFormdeconstructor for " << _target << " called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreation", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreation", 145, 137), _target(target)
 {
     std::cout << "ShrubberyCreationFormconstructor for the name " << _target << " called" << std::endl;
 }
@@ -36,7 +36,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     bool isValid = getIsSigned() && (executor.getGrade() <= getGradeToExecute());
     if (!isValid)
         throw AForm::GradeTooLowException();
-    std::string ascii_tree =
+    const std::string ascii_tree =
         "       &&& &&  & &&\n"
         "     && &\\/&\\|& ()|/ @, &&\n"
         "     &\\/(/&/&||/&/&/\\)&/&\\@\n"

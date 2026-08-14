@@ -14,7 +14,7 @@ Form::Form(const Form &other): _name(other._name), _isSigned(other._isSigned), _
     std::cout << "Form copy constructor called" << std::endl;
 }
 
-Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+Form::Form(const std::string &name, int gradeToSign, int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
     checkGrade(_gradeToSign, _gradeToExecute);
     std::cout << "Form constructor for the name " << name << " called" << std::endl;
@@ -34,24 +34,24 @@ Form::~Form()
     std::cout << "Form deconstructor for " << _name << " called" << std::endl;
 }
 
-std::string Form::getName()
+std::string Form::getName() const
 {
     return _name;
 }
-bool Form::getIsSigned()
+bool Form::getIsSigned() const
 {
     return _isSigned;
 }
-int Form::getGradeToSign()
+int Form::getGradeToSign() const
 {
     return _gradeToSign;
 }
-int Form::getGradeToExecute()
+int Form::getGradeToExecute() const
 {
     return _gradeToExecute;
 }
 
-void Form::beSigned(Bureaucrat &b)
+void Form::beSigned(const Bureaucrat &b)
 {
     int bGrade = b.getGrade();
     if(bGrade <= _gradeToSign) 
@@ -60,7 +60,7 @@ void Form::beSigned(Bureaucrat &b)
         throw Form::GradeTooLowException();
 }
 
-void Form::checkGrade(int gradeToSign, int gradeToExecute)
+void Form::checkGrade(int gradeToSign, int gradeToExecute) const
 {
     if(gradeToSign < 1 || gradeToExecute < 1)  
         throw Form::GradeTooHighException();
@@ -78,7 +78,7 @@ const char * Form::GradeTooLowException::what() const throw()
     return "grade is too low";
 }
 
-std::ostream& operator<<(std::ostream &os, Form &f)
+std::ostream& operator<<(std::ostream &os, const Form &f)
 {
     return os << f.getName() << ", " << f.getIsSigned() << ", " << f.getGradeToSign() << ", " << f.getGradeToExecute();
 }

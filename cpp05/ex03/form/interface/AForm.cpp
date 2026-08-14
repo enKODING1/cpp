@@ -13,7 +13,7 @@ AForm::AForm(const AForm &other) : _name(other._name), _isSigned(other._isSigned
     std::cout << "AForm copy constructor called" << std::endl;
 }
 
-AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
     checkGrade(_gradeToSign, _gradeToExecute);
     std::cout << "AForm constructor for the name " << name << " called" << std::endl;
@@ -50,7 +50,7 @@ int AForm::getGradeToExecute() const
     return _gradeToExecute;
 }
 
-void AForm::beSigned(Bureaucrat &b)
+void AForm::beSigned(const Bureaucrat &b)
 {
     int bGrade = b.getGrade();
     if (bGrade <= _gradeToSign)
@@ -59,7 +59,7 @@ void AForm::beSigned(Bureaucrat &b)
         throw AForm::GradeTooLowException();
 }
 
-void AForm::checkGrade(int gradeToSign, int gradeToExecute)
+void AForm::checkGrade(int gradeToSign, int gradeToExecute) const
 {
     if (gradeToSign < 1 || gradeToExecute < 1)
         throw AForm::GradeTooHighException();

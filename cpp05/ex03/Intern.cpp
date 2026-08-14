@@ -15,25 +15,26 @@ Intern &Intern::operator=(const Intern &other) {
   return *this;
 }
 
-AForm *Intern::createShrubbery(std::string target) {
+AForm *Intern::createShrubbery(const std::string &target) const {
   return new ShrubberyCreationForm(target);
 }
 
-AForm *Intern::createRobotomy(std::string target) {
+AForm *Intern::createRobotomy(const std::string &target) const {
   return new RobotomyRequestForm(target);
 }
 
-AForm *Intern::createPresidential(std::string target) {
+AForm *Intern::createPresidential(const std::string &target) const {
   return new PresidentialPardonForm(target);
 }
 
-AForm *Intern::makeForm(std::string formName, std::string target) {
-  AForm *(Intern::*createForms[3])(std::string) = {&Intern::createShrubbery,
-                                                   &Intern::createRobotomy,
-                                                   &Intern::createPresidential};
+AForm *Intern::makeForm(const std::string &formName,
+                        const std::string &target) const {
+  AForm *(Intern::*createForms[3])(const std::string &) const = {
+      &Intern::createShrubbery, &Intern::createRobotomy,
+      &Intern::createPresidential};
 
-  std::string formNames[3] = {"shrubbery creation", "robotomy request",
-                              "presidential pardon"};
+  const std::string formNames[3] = {"shrubbery creation", "robotomy request",
+                                    "presidential pardon"};
 
   for (int i = 0; i < 3; ++i) {
     if (formName == formNames[i])

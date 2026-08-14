@@ -13,7 +13,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(oth
     std::cout << "Bureaucrat copy constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade)
 {
     checkGrade(_grade);
     std::cout << "Bureaucrat constructor for the name " << name << " called" << std::endl;
@@ -33,7 +33,7 @@ Bureaucrat::~Bureaucrat()
     std::cout << "Bureaucrat deconstructor for " << _name << " called" << std::endl;
 }
 
-void Bureaucrat::checkGrade(int grade)
+void Bureaucrat::checkGrade(int grade) const
 {
     if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
@@ -63,7 +63,7 @@ void Bureaucrat::decreaseGrade()
     _grade++;
 }
 
-void Bureaucrat::signForm(AForm &f)
+void Bureaucrat::signForm(AForm &f) const
 {
     try
     {
@@ -78,7 +78,7 @@ void Bureaucrat::signForm(AForm &f)
     }
 }
 
-void Bureaucrat::executeForm(AForm const &form)
+void Bureaucrat::executeForm(AForm const &form) const
 {
     try
     {
