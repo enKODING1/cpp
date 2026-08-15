@@ -14,6 +14,9 @@ private:
     const int _gradeToExecute;
     void checkGrade(int gradeToSign, int gradeToExecute) const;
 
+protected:
+    void checkExecute(Bureaucrat const &executor) const;
+
 public:
     AForm();
     AForm(const AForm &other);

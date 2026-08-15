@@ -1,6 +1,14 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
+void AForm::checkExecute(Bureaucrat const &executor) const
+{
+    if (!getIsSigned())
+        throw AForm::FormNotSignedException();
+    if (executor.getGrade() > getGradeToExecute())
+        throw AForm::GradeTooLowException();
+}
+
 AForm::AForm() : _name("untitled"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150)
 {
     checkGrade(_gradeToSign, _gradeToExecute);

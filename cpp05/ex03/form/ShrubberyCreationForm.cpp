@@ -33,10 +33,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm(
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-    if (!getIsSigned())
-        throw AForm::FormNotSignedException();
-    if (executor.getGrade() > getGradeToExecute())
-        throw AForm::GradeTooLowException();
+    checkExecute(executor);
     const std::string ascii_tree =
         "       &&& &&  & &&\n"
         "     && &\\/&\\|& ()|/ @, &&\n"

@@ -34,10 +34,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("Rob
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-    if (!getIsSigned())
-        throw AForm::FormNotSignedException();
-    if (executor.getGrade() > getGradeToExecute())
-        throw AForm::GradeTooLowException();
+    checkExecute(executor);
     std::srand(std::time(NULL));
     int roll = std::rand() % 2;
 
