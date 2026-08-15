@@ -33,8 +33,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm(
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-    bool isValid = getIsSigned() && (executor.getGrade() <= getGradeToExecute());
-    if (!isValid)
+    if (!getIsSigned())
+        throw AForm::FormNotSignedException();
+    if (executor.getGrade() > getGradeToExecute())
         throw AForm::GradeTooLowException();
     const std::string ascii_tree =
         "       &&& &&  & &&\n"
@@ -54,5 +55,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     std::ofstream file(name.c_str());
     file << ascii_tree << std::endl;
     file.close();
-    // sign되어있지 않을 때를 별도 처리하는 예외를 만드는게 나을까
 }

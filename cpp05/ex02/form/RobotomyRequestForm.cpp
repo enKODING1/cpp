@@ -34,8 +34,9 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("Rob
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-    bool isValid = getIsSigned() && (executor.getGrade() <= getGradeToExecute());
-    if (!isValid)
+    if (!getIsSigned())
+        throw AForm::FormNotSignedException();
+    if (executor.getGrade() > getGradeToExecute())
         throw AForm::GradeTooLowException();
     std::srand(std::time(NULL));
     int roll = std::rand() % 2;
@@ -44,5 +45,4 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
         std::cout << _target << " has been robotomized" << std::endl;
     if (roll == 0)
         std::cout << _target << " robotomy failed" << std::endl;
-    // sign되어있지 않을 때를 별도 처리하는 예외를 만드는게 나을까
 }

@@ -32,9 +32,9 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AFor
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-    bool isValid = getIsSigned() && (executor.getGrade() <= getGradeToExecute());
-    if (!isValid)
+    if (!getIsSigned())
+        throw AForm::FormNotSignedException();
+    if (executor.getGrade() > getGradeToExecute())
         throw AForm::GradeTooLowException();
     std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-    // sign되어있지 않을 때를 별도 처리하는 예외를 만드는게 나을까
 }
