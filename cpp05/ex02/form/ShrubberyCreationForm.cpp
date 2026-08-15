@@ -4,17 +4,17 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreation", 145, 137), _target("wall-e")
 {
-    std::cout << "ShrubberyCreationFormdefault constructor called" << std::endl;
+    std::cout << "\033[32m" << "ShrubberyCreationFormdefault constructor called" << "\033[0m" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm(other), _target(other._target)
 {
-    std::cout << "ShrubberyCreationFormcopy constructor called" << std::endl;
+    std::cout << "\033[32m" << "ShrubberyCreationFormcopy constructor called" << "\033[0m" << std::endl;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
 {
-    std::cout << "ShrubberyCreationFormassignment constructor called" << std::endl;
+    std::cout << "\033[32m" << "ShrubberyCreationFormassignment constructor called" << "\033[0m" << std::endl;
     if (this != &other)
         _target = other._target;
 
@@ -23,12 +23,12 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-    std::cout << "ShrubberyCreationFormdeconstructor for " << _target << " called" << std::endl;
+    std::cout << "\033[33m" << "ShrubberyCreationFormdeconstructor for " << _target << " called" << "\033[0m" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreation", 145, 137), _target(target)
 {
-    std::cout << "ShrubberyCreationFormconstructor for the name " << _target << " called" << std::endl;
+    std::cout << "\033[32m" << "ShrubberyCreationFormconstructor for the name " << _target << " called" << "\033[0m" << std::endl;
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const

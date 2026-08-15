@@ -6,24 +6,24 @@
 Bureaucrat::Bureaucrat() : _name("foobar"), _grade(150)
 {
     checkGrade(_grade);
-    std::cout << "Bureaucrat default constructor called" << std::endl;
+    std::cout << "\033[32m" << "Bureaucrat default constructor called" << "\033[0m" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other): _name(other._name), _grade(other._grade)
 {
     checkGrade(_grade);
-    std::cout << "Bureaucrat copy constructor called" << std::endl;
+    std::cout << "\033[32m" << "Bureaucrat copy constructor called" << "\033[0m" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade)
 {
     checkGrade(_grade);
-   std::cout << "Bureaucrat constructor for the name " << name << " called" << std::endl;
+   std::cout << "\033[32m" << "Bureaucrat constructor for the name " << name << " called" << "\033[0m" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
-    std::cout << "Bureaucrat assignment constructor called" << std::endl;
+    std::cout << "\033[32m" << "Bureaucrat assignment constructor called" << "\033[0m" << std::endl;
     if(this != &other)
         _grade = other._grade;
 
@@ -32,7 +32,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat deconstructor for " << _name << " called" << std::endl;
+    std::cout << "\033[33m" << "Bureaucrat deconstructor for " << _name << " called" << "\033[0m" << std::endl;
 }
 
 void Bureaucrat::checkGrade(int grade) const

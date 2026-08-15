@@ -3,17 +3,17 @@
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardon", 25, 5), _target("ford")
 {
-    std::cout << "PresidentialPardonForm default constructor called" << std::endl;
+    std::cout << "\033[32m" << "PresidentialPardonForm default constructor called" << "\033[0m" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other) : AForm(other), _target(other._target)
 {
-    std::cout << "PresidentialPardonForm copy constructor called" << std::endl;
+    std::cout << "\033[32m" << "PresidentialPardonForm copy constructor called" << "\033[0m" << std::endl;
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other)
 {
-    std::cout << "PresidentialPardonForm assignment constructor called" << std::endl;
+    std::cout << "\033[32m" << "PresidentialPardonForm assignment constructor called" << "\033[0m" << std::endl;
     if (this != &other)
         _target = other._target;
 
@@ -22,12 +22,12 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-    std::cout << "PresidentialPardonForm deconstructor for " << _target << " called" << std::endl;
+    std::cout << "\033[33m" << "PresidentialPardonForm deconstructor for " << _target << " called" << "\033[0m" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardon", 25, 5), _target(target)
 {
-    std::cout << "PresidentialPardonForm constructor for the name " << _target << " called" << std::endl;
+    std::cout << "\033[32m" << "PresidentialPardonForm constructor for the name " << _target << " called" << "\033[0m" << std::endl;
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const

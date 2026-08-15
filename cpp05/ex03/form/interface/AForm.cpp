@@ -4,24 +4,24 @@
 AForm::AForm() : _name("untitled"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150)
 {
     checkGrade(_gradeToSign, _gradeToExecute);
-    std::cout << "AForm default constructor called" << std::endl;
+    std::cout << "\033[32m" << "AForm default constructor called" << "\033[0m" << std::endl;
 }
 
 AForm::AForm(const AForm &other) : _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
 {
     checkGrade(_gradeToSign, _gradeToExecute);
-    std::cout << "AForm copy constructor called" << std::endl;
+    std::cout << "\033[32m" << "AForm copy constructor called" << "\033[0m" << std::endl;
 }
 
 AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
     checkGrade(_gradeToSign, _gradeToExecute);
-    std::cout << "AForm constructor for the name " << name << " called" << std::endl;
+    std::cout << "\033[32m" << "AForm constructor for the name " << name << " called" << "\033[0m" << std::endl;
 }
 
 AForm &AForm::operator=(const AForm &other)
 {
-    std::cout << "AForm assignment constructor called" << std::endl;
+    std::cout << "\033[32m" << "AForm assignment constructor called" << "\033[0m" << std::endl;
     if (this != &other)
         _isSigned = other._isSigned;
 
@@ -30,7 +30,7 @@ AForm &AForm::operator=(const AForm &other)
 
 AForm::~AForm()
 {
-    std::cout << "AForm deconstructor for " << _name << " called" << std::endl;
+    std::cout << "\033[33m" << "AForm deconstructor for " << _name << " called" << "\033[0m" << std::endl;
 }
 
 std::string AForm::getName() const

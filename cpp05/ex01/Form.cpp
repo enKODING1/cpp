@@ -5,24 +5,24 @@
 Form::Form() : _name("foobar"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150)
 {
     checkGrade(_gradeToSign, _gradeToExecute);
-    std::cout << "Form default constructor called" << std::endl;
+    std::cout << "\033[32m" << "Form default constructor called" << "\033[0m" << std::endl;
 }
 
 Form::Form(const Form &other): _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
 {
     checkGrade(_gradeToSign, _gradeToExecute);
-    std::cout << "Form copy constructor called" << std::endl;
+    std::cout << "\033[32m" << "Form copy constructor called" << "\033[0m" << std::endl;
 }
 
 Form::Form(const std::string &name, int gradeToSign, int gradeToExecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
     checkGrade(_gradeToSign, _gradeToExecute);
-    std::cout << "Form constructor for the name " << name << " called" << std::endl;
+    std::cout << "\033[32m" << "Form constructor for the name " << name << " called" << "\033[0m" << std::endl;
 }
 
 Form &Form::operator=(const Form &other)
 {
-    std::cout << "Form assignment constructor called" << std::endl;
+    std::cout << "\033[32m" << "Form assignment constructor called" << "\033[0m" << std::endl;
     if(this != &other)
            _isSigned = other._isSigned;
 
@@ -31,7 +31,7 @@ Form &Form::operator=(const Form &other)
 
 Form::~Form()
 {
-    std::cout << "Form deconstructor for " << _name << " called" << std::endl;
+    std::cout << "\033[33m" << "Form deconstructor for " << _name << " called" << "\033[0m" << std::endl;
 }
 
 std::string Form::getName() const

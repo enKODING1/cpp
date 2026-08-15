@@ -5,17 +5,17 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequest", 72, 45), _target("wall-e")
 {
-    std::cout << "RobotomyRequestForm default constructor called" << std::endl;
+    std::cout << "\033[32m" << "RobotomyRequestForm default constructor called" << "\033[0m" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm(other), _target(other._target)
 {
-    std::cout << "RobotomyRequestForm copy constructor called" << std::endl;
+    std::cout << "\033[32m" << "RobotomyRequestForm copy constructor called" << "\033[0m" << std::endl;
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
 {
-    std::cout << "RobotomyRequestForm assignment constructor called" << std::endl;
+    std::cout << "\033[32m" << "RobotomyRequestForm assignment constructor called" << "\033[0m" << std::endl;
     if (this != &other)
         _target = other._target;
 
@@ -24,12 +24,12 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-    std::cout << "RobotomyRequestForm deconstructor for " << _target << " called" << std::endl;
+    std::cout << "\033[33m" << "RobotomyRequestForm deconstructor for " << _target << " called" << "\033[0m" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequest", 72, 45), _target(target)
 {
-    std::cout << "RobotomyRequestForm constructor for the name " << _target << " called" << std::endl;
+    std::cout << "\033[32m" << "RobotomyRequestForm constructor for the name " << _target << " called" << "\033[0m" << std::endl;
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const

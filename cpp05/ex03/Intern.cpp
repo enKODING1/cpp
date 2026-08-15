@@ -1,16 +1,16 @@
 #include "Intern.hpp"
 
 Intern::Intern() {
-  std::cout << "Intern default constructor called" << std::endl;
+  std::cout << "\033[32m" << "Intern default constructor called" << "\033[0m" << std::endl;
 }
 
 Intern::Intern(const Intern &other) {
   (void)other;
-  std::cout << "Intern copy constructor called" << std::endl;
+  std::cout << "\033[32m" << "Intern copy constructor called" << "\033[0m" << std::endl;
 }
 
 Intern &Intern::operator=(const Intern &other) {
-  std::cout << "Intern assignment constructor called" << std::endl;
+  std::cout << "\033[32m" << "Intern assignment constructor called" << "\033[0m" << std::endl;
   (void)other;
   return *this;
 }
@@ -45,4 +45,4 @@ AForm *Intern::makeForm(const std::string &formName,
   return NULL;
 }
 
-Intern::~Intern() { std::cout << "Intern deconstructor called" << std::endl; }
+Intern::~Intern() { std::cout << "\033[33m" << "Intern deconstructor called" << "\033[0m" << std::endl; }
